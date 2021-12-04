@@ -11,7 +11,8 @@
             
             function rechnen(wert){
 
-                ergebnis = eval(wert);
+                //ergebnis = eval(wert); //eval() is evil;)
+                ergebnis = Function(' "use strict"; return(' +wert+ ')')();
                 document.getElementById("display").value = ergebnis;
             }
             
